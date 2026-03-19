@@ -1,0 +1,21 @@
+.transacoes-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-gray-100);
+}
+
+.transacoes-page .main-content {
+  flex: 1;
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+}
+
+@media (max-width: 768px) {
+  .transacoes-page {
+    flex-direction: column;
+  }
+  
+  .transacoes-page .main-content {
+    margin-left: 0;
+  }
+}
