@@ -1,0 +1,172 @@
+.transacoes-container {
+  padding: 30px;
+  background-color: var(--color-gray-100);
+  min-height: calc(100vh - 60px);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header h1 {
+  color: var(--color-primary);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(28, 41, 106, 0.3);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: var(--color-paragraph);
+}
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 12px;
+  color: var(--color-paragraph);
+  font-size: 16px;
+}
+
+.transacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.transacao-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  border: 1px solid var(--color-gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.transacao-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.transacao-card .status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+/* Cores específicas para status (mantidas por serem semânticas) */
+.transacao-card .status.aprovada,
+.transacao-card .status.ativa {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.transacao-card .status.pendente,
+.transacao-card .status.pendente_pagamento {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.transacao-card .status.recusada,
+.transacao-card .status.cancelada {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.transacao-card .status.expirada {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+
+.transacao-card .valor {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.transacao-card .data {
+  font-size: 14px;
+  color: var(--color-paragraph);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.transacao-card .usuario {
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 500;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-gray-200);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .transacoes-container {
+    padding: 20px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .transacoes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .transacoes-container {
+    padding: 15px;
+  }
+  
+  .transacao-card .valor {
+    font-size: 24px;
+  }
+}
